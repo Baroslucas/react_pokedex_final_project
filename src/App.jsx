@@ -1,5 +1,5 @@
 import { Header } from './components/Header/Header'
-import { FilterBar } from './components/FilterBar'
+import { FilterBar } from './components/FilterBar/FilterBar'
 import { PokemonList } from './components/PokemonList'
 import './index.css'
 
