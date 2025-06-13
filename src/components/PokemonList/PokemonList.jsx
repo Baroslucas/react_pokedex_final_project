@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import { fetchAllPokemon } from "../api/pokemonApi";
-import { PokemonCard } from "./PokemonCard/PokemonCard"
+import { fetchAllPokemon } from "../../api/pokemonApi";
+import { PokemonCard } from "../PokemonCard/PokemonCard"
+import s from './PokemonList.module.css'
+
 export function PokemonList() {
     const [pokemons, setPokemons] = useState([])
 
@@ -12,7 +14,7 @@ export function PokemonList() {
     }, [])
 
     return (
-        <div>
+        <div className={s.div}>
             {pokemons.map((pokemon) => (
                 <PokemonCard 
                     key={pokemon.id}
@@ -22,6 +24,3 @@ export function PokemonList() {
         </div>
     )
 }
-
-//  {pokemons.map((pokemon) => {
-//                 return

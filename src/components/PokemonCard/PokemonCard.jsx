@@ -6,11 +6,13 @@ export function PokemonCard({pokemon}) {
     
     return (
         <div className={s.div}>
-            <p>{pokemon.name}</p>
             <img 
                 src={`${POKEMON_IMG_BASE_URL}${pokemon.id}.svg`} 
-                alt={pokemon.name} 
+                alt={pokemon.name}
+                width={80} 
+                height={80}
             />
+            <p className={s.pokemonName}>{pokemon.name}</p>
             {pokemon.types.map((type) => (
                 <TypeSpan key={type} typeName={type} />
             ))}
