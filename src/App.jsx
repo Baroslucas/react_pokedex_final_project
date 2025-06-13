@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import { Header } from './components/Header'
+import { Header } from './components/Header/Header'
 import { FilterBar } from './components/FilterBar'
 import { PokemonList } from './components/PokemonList'
+import './index.css'
 
 
 function App() {

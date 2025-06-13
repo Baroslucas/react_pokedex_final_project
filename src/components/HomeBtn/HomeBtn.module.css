@@ -1,0 +1,23 @@
+.button {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    border: none;
+    background-color: bisque;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.pokedexImg {
+    width: 70px;
+    height: 30px;
+}
+
+.pokeballImg {
+    width: 70px;
+    height: 20px;
+    margin-right: 5px;
+    
+}
