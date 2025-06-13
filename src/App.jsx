@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Header } from './components/Header'
 import { FilterBar } from './components/FilterBar'
+import { PokemonList } from './components/PokemonList'
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <>
       <Header />
       <FilterBar placeholder="Filter the pokemon list, ex: Pikachu"/>
+      <PokemonList/>
     </>
   )
 }
