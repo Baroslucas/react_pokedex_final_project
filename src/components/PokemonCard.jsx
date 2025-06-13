@@ -10,7 +10,10 @@ export function PokemonCard({pokemon}) {
                 src={`${POKEMON_IMG_BASE_URL}${pokemon.id}.svg`} 
                 alt={pokemon.name} 
             />
-            <TypeSpan/>
+            {pokemon.types.map((type) => (
+                <TypeSpan key={type} typeName={type} />
+            ))}
+           
         </div>
     )
 }
