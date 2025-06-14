@@ -6,7 +6,6 @@ export function HomePage() {
     return (
         <>
             <Header />
-            <FilterBar placeholder="Filter the pokemon list, ex: Pikachu"/>
             <PokemonList/>
         </>
     )
