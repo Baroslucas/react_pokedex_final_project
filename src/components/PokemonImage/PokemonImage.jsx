@@ -1,9 +1,10 @@
-export function PokemonImage({src, alt}) {
+export function PokemonImage({pokemonImg, pokemonName}) {
     return (
         <div>
             <img 
-                src={src} 
-                alt={alt} />
+                src={pokemonImg} 
+                alt={pokemonName} 
+            />
         </div>
         
     )
