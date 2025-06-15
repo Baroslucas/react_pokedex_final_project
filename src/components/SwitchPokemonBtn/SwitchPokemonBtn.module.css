@@ -1,0 +1,15 @@
+.div {
+    margin: 0px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.img {
+    fill: black;
+}
