@@ -38,6 +38,6 @@ export function PokemonList() {
                     ))
                 )}
             </div>
-        </div>       
+        </div>
     )
 }
