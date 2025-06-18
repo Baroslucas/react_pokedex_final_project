@@ -3,16 +3,17 @@ import { fetchAllPokemon } from "../../api/pokemonApi";
 import { FilterBar } from "../FilterBar/FilterBar";
 import { PokemonCard } from "../PokemonCard/PokemonCard"
 import s from './PokemonList.module.css'
+import { usePokemons } from "../../context/PokemonContext";
 
 export function PokemonList() {
-    const [pokemons, setPokemons] = useState([])
+    const {pokemons, setPokemons} = usePokemons()
     const [filter, setFilter] = useState('')
 
     useEffect(() => {
         fetchAllPokemon().then((data) => {
             setPokemons(data)
         })
-    }, [])
+    }, [setPokemons])
 
     const pokemonListFilter = pokemons.filter((p) =>
         p.name.toLowerCase().includes(filter.toLowerCase())

@@ -1,8 +1,16 @@
 import { MAX_STAT } from "../../config/constants";
 import { TypeSpan } from "../TypeSpan/TypeSpan";
 import { StatLine } from "./StatLine";
+import { usePokemons } from "../../context/PokemonContext"
+import { useParams } from "react-router-dom";
 
-export function PokemonStats({pokemon}) {
+export function PokemonStats() {
+    const { pokemons } = usePokemons()
+    const { id } = useParams()
+
+    const pokemon = pokemons.find((p) => p.id.toString() === id)
+
+    console.log(pokemon)
     return (
         <div>
             <h3>{pokemon.name}</h3>
@@ -26,4 +34,5 @@ export function PokemonStats({pokemon}) {
             </div>
         </div>
     )
+    
 }
