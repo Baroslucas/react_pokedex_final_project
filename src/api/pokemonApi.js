@@ -30,3 +30,15 @@ export async function addReview({ pokemonId, author, content }) {
 
   return await response.json();
 }
+
+export async function updateLike({ id, like }) {
+  const response = await fetch(`http://localhost:3001/pokemons/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ like }),
+  });
+
+  return await response.json();
+}

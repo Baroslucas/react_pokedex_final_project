@@ -5,13 +5,11 @@ import { usePokemons } from "../../context/PokemonContext"
 import { useParams } from "react-router-dom";
 
 export function PokemonStats() {
-    const { pokemons } = usePokemons()
     const { id } = useParams()
-
+    const { pokemons } = usePokemons()
     const pokemon = pokemons.find((p) => p.id.toString() === id)
     const normalizePokemonStats = normalizeStats(pokemon.base)
 
-    console.log(pokemon)
     return (
         <div>
             <h3>{pokemon.name}</h3>

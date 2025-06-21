@@ -2,13 +2,19 @@ import like from '../../assets/img/like.svg'
 import { Review } from '../Review/Review'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from "react"
-import { addReview, fetchPokemonReview } from '../../api/pokemonApi'
+import { addReview, fetchPokemonReview, updateLike } from '../../api/pokemonApi'
+import { usePokemons } from '../../context/PokemonContext'
 
 export function PokemonReview() {
 
     const { id } = useParams()
     const [reviews, setReviews] = useState([])
     const [newReview, setNewReview] = useState('')
+
+    const { pokemons } = usePokemons()
+    const pokemon = pokemons.find((p) => p.id.toString() === id)
+
+    const [likes, setLikes] = useState(pokemon.like)
 
     useEffect(() => {
         fetchPokemonReview(id)
@@ -28,18 +34,25 @@ export function PokemonReview() {
         setReviews(updatedReview)
         setNewReview('')
     }
+    
+    const handleLike = async () => {
+            const likeIncrement = likes + 1
 
+            await updateLike({ id, like:likeIncrement })
+            setLikes(likeIncrement)
+        }
+    console.log(pokemon)
     return (
         <div>
             <div>
-                <button>
+                <button onClick={handleLike}>
                     <img 
                         src={like} 
                         alt="like button"
                         className='' 
                     />
                 </button>
-                <p>2</p>
+                <p>{likes}</p>
             </div>
             <div>
                 <h3>Review</h3>
