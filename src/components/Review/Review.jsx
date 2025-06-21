@@ -1,8 +1,8 @@
-export function Review() {
+export function Review({ review }) {
     return (
         <div>
-            <p>This is a review</p>
-            <p>Posted by : Me</p>
+            <p>{review.content}</p>
+            <p>Posted by : {review.author}</p>
         </div>
     )
 }

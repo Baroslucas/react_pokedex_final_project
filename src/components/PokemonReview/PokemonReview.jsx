@@ -1,7 +1,19 @@
 import like from '../../assets/img/like.svg'
 import { Review } from '../Review/Review'
+import { useParams } from 'react-router-dom'
+import { useEffect, useState } from "react"
+import { fetchPokemonReview } from '../../api/pokemonApi'
 
 export function PokemonReview() {
+
+    const { id } = useParams()
+    const [reviews, setReviews] = useState([])
+
+    useEffect(() => {
+        fetchPokemonReview(id)
+            .then(setReviews)
+    }, [id])
+
     return (
         <div>
             <div>
@@ -20,7 +32,12 @@ export function PokemonReview() {
                     type="text"
                     placeholder='Add a review ...'
                 />
-                <Review />
+                {reviews.map((review) => (
+                    <Review 
+                        key={review.id} 
+                        review={review} 
+                    />
+                ))}
             </div>
         </div>
     )
