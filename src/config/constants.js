@@ -32,5 +32,15 @@ export const MAX_STAT = {
   hp: 105,
 };
 
+export function normalizeStats(stats) {
+  return {
+    hp: stats["HP"],
+    attack: stats["Attack"],
+    defense: stats["Defense"],
+    specialAttack: stats["Special attack"],
+    specialDefense: stats["Special defense"],
+    speed: stats["Speed"],
+  };
+}
 export const POKEMON_IMG_BASE_URL =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/";

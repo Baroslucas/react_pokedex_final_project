@@ -1,4 +1,4 @@
-import { MAX_STAT } from "../../config/constants";
+import { MAX_STAT, normalizeStats } from "../../config/constants";
 import { TypeSpan } from "../TypeSpan/TypeSpan";
 import { StatLine } from "./StatLine";
 import { usePokemons } from "../../context/PokemonContext"
@@ -9,6 +9,7 @@ export function PokemonStats() {
     const { id } = useParams()
 
     const pokemon = pokemons.find((p) => p.id.toString() === id)
+    const normalizePokemonStats = normalizeStats(pokemon.base)
 
     console.log(pokemon)
     return (
@@ -27,7 +28,7 @@ export function PokemonStats() {
                     <StatLine
                         key={stat}
                         statName={stat}
-                        value={30}
+                        value={normalizePokemonStats[stat]}
                         max={MAX_STAT[stat]}
                     />
                  ))}
