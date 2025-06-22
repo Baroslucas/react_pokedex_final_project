@@ -7,7 +7,17 @@ import { useParams } from "react-router-dom";
 export function PokemonStats() {
     const { id } = useParams()
     const { pokemons } = usePokemons()
-    const pokemon = pokemons.find((p) => p.id.toString() === id)
+    
+    if (!pokemons || pokemons.length === 0) {
+        return <p>Chargement des statistiques...</p>;
+    }
+
+    const pokemon = pokemons.find((p) => p.id.toString() === id);
+
+    if (!pokemon) {
+        return <p>Pokémon introuvable.</p>;
+    }
+
     const normalizePokemonStats = normalizeStats(pokemon.base)
 
     return (

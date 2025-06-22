@@ -6,7 +6,16 @@ export function PokemonImage() {
     const { pokemons } = usePokemons()
     const { id } = useParams()
 
-    const pokemon = pokemons.find(p => p.id.toString() === id);
+    if (!pokemons || pokemons.length === 0) {
+        return <p>Chargement des pokémons...</p>
+    }
+
+    const pokemon = pokemons.find(p => p.id.toString() === id)
+
+    if (!pokemon) {
+        return <p>Pokémon introuvable</p>
+    }
+
     return (
         <div>
             <img 
@@ -14,6 +23,5 @@ export function PokemonImage() {
                 alt={pokemon.name} 
             />
         </div>
-        
     )
 }

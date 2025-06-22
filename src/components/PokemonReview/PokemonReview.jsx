@@ -6,51 +6,61 @@ import { addReview, fetchPokemonReview, updateLike } from '../../api/pokemonApi'
 import { usePokemons } from '../../context/PokemonContext'
 
 export function PokemonReview() {
-
     const { id } = useParams()
+    const { pokemons } = usePokemons()
+
     const [reviews, setReviews] = useState([])
     const [newReview, setNewReview] = useState('')
+    const [likes, setLikes] = useState(0)
 
-    const { pokemons } = usePokemons()
-    const pokemon = pokemons.find((p) => p.id.toString() === id)
-
-    const [likes, setLikes] = useState(pokemon.like)
+    const pokemon = pokemons.find(p => p.id.toString() === id)
 
     useEffect(() => {
-        fetchPokemonReview(id)
-            .then(setReviews)
-    }, [id])
+        if (pokemon) {
+            setLikes(pokemon.like)
+        }
+    }, [pokemon])
+
+    useEffect(() => {
+        if (pokemon) {
+            fetchPokemonReview(id).then(setReviews)
+            setLikes(pokemon.like)
+        }
+    }, [id, pokemon])
 
     const handleSubmit = async () => {
         if (!newReview) return;
 
         await addReview({
-            pokemonId: (id),
+            pokemonId: id,
             author: "Me",
             content: newReview,
-        }) 
+        })
 
         const updatedReview = await fetchPokemonReview(id)
         setReviews(updatedReview)
         setNewReview('')
     }
-    
-    const handleLike = async () => {
-            const likeIncrement = likes + 1
 
-            await updateLike({ id, like:likeIncrement })
-            setLikes(likeIncrement)
-        }
-    console.log(pokemon)
+    const handleLike = async () => {
+        const likeIncrement = likes + 1
+        await updateLike({ id, like: likeIncrement })
+        setLikes(likeIncrement)
+    }
+
+    if (!pokemons || pokemons.length === 0) {
+        return <p>Chargement des données Pokémon...</p>
+    }
+
+    if (!pokemon) {
+        return <p>Pokémon introuvable</p>
+    }
+
     return (
         <div>
             <div>
                 <button onClick={handleLike}>
-                    <img 
-                        src={like} 
-                        alt="like button"
-                        className='' 
-                    />
+                    <img src={like} alt="like button" />
                 </button>
                 <p>{likes}</p>
             </div>
@@ -68,10 +78,7 @@ export function PokemonReview() {
                     }}
                 />
                 {reviews.map((review) => (
-                    <Review 
-                        key={review.id} 
-                        review={review} 
-                    />
+                    <Review key={review.id} review={review} />
                 ))}
             </div>
         </div>
