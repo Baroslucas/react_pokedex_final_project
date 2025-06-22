@@ -450,7 +450,7 @@
     },
     {
       "id": "14",
-      "like": 0,
+      "like": 5,
       "name": "Coconfort",
       "types": [
         "Bug",
@@ -5074,7 +5074,7 @@
     },
     {
       "id": "149",
-      "like": 0,
+      "like": 3,
       "name": "Dracolosse",
       "types": [
         "Dragon",
@@ -5143,7 +5143,7 @@
     },
     {
       "id": "151",
-      "like": 0,
+      "like": 2,
       "name": "Mew",
       "types": [
         "Psychic"
@@ -5567,6 +5567,18 @@
       "pokemonId": "8",
       "author": "Me",
       "content": "carabaffe"
+    },
+    {
+      "id": "d1cb",
+      "pokemonId": "14",
+      "author": "Me",
+      "content": "ezargzear"
+    },
+    {
+      "id": "30f2",
+      "pokemonId": "149",
+      "author": "Me",
+      "content": "da best"
     }
   ]
 }

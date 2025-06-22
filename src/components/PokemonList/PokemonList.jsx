@@ -16,7 +16,8 @@ export function PokemonList() {
     }, [setPokemons])
 
     const pokemonListFilter = pokemons.filter((p) =>
-        p.name.toLowerCase().includes(filter.toLowerCase())
+        p.name.toLowerCase().includes(filter.toLowerCase()) ||
+        p.type.toLowerCase().includes(filter.toLowerCase())
     );
 
     return (
