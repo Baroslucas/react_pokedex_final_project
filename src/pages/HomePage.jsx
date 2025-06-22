@@ -7,7 +7,6 @@ import { PokemonStats } from "../components/PokemonStats/PokemonStats"
 export function HomePage() {
     return (
         <>
-            <Header />
             <PokemonList/>
         </>
     )

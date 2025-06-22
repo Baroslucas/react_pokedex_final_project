@@ -7,7 +7,6 @@ import { SwitchPokemonBtn } from "../components/SwitchPokemonBtn/SwitchPokemonBt
 export function DescriptionPage() {
     return (
         <>
-            <Header />
             <SwitchPokemonBtn />
             <PokemonImage />
             <PokemonStats />
