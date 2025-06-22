@@ -42,5 +42,6 @@ export function normalizeStats(stats) {
     speed: stats["Speed"],
   };
 }
+
 export const POKEMON_IMG_BASE_URL =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/";

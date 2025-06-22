@@ -244,7 +244,7 @@
     },
     {
       "id": "8",
-      "like": 0,
+      "like": 2,
       "name": "Carabaffe",
       "types": [
         "Water"
@@ -5561,6 +5561,12 @@
       "pokemonId": "4",
       "author": "Me",
       "content": "sertdhtgt"
+    },
+    {
+      "id": "283b",
+      "pokemonId": "8",
+      "author": "Me",
+      "content": "carabaffe"
     }
   ]
 }
