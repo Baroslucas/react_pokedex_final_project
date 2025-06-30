@@ -5,6 +5,8 @@ import { PokemonCard } from "../PokemonCard/PokemonCard"
 import s from './PokemonList.module.css'
 import { usePokemons } from "../../context/PokemonContext";
 
+
+//Div with all pokemons using pokemonCard
 export function PokemonList() {
     const {pokemons, setPokemons} = usePokemons()
     const [filter, setFilter] = useState('')

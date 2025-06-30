@@ -3,6 +3,7 @@ import { POKEMON_IMG_BASE_URL } from "../../config/constants";
 import s from './PokemonCard.module.css';
 import { Link } from "react-router-dom";
 
+//One PokemonCard (name / image / types)
 export function PokemonCard({pokemon}) {
     
     return (

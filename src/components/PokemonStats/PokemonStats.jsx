@@ -5,6 +5,7 @@ import { usePokemons } from "../../context/PokemonContext"
 import { useParams } from "react-router-dom";
 import s from "./PokemonStats.module.css"
 
+//All the pokemon stats using StatLine
 export function PokemonStats() {
     const { id } = useParams()
     const { pokemons } = usePokemons()

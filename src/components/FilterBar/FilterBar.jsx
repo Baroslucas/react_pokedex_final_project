@@ -1,5 +1,6 @@
 import s from './FilterBar.module.css'
 
+// Filter bar for the HomePage
 export function FilterBar({placeholder, value, onChange}) {
     return (
         <div className={s.div}>

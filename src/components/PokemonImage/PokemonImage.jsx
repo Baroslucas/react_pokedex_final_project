@@ -3,6 +3,7 @@ import { usePokemons } from "../../context/PokemonContext"
 import { POKEMON_IMG_BASE_URL } from "../../config/constants";
 import s from "./PokemonImage.module.css"
 
+// Div with pokemonImg
 export function PokemonImage() {
     const { pokemons } = usePokemons()
     const { id } = useParams()

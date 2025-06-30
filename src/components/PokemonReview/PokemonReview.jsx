@@ -6,6 +6,8 @@ import { addReview, fetchPokemonReview, updateLike } from '../../api/pokemonApi'
 import { usePokemons } from '../../context/PokemonContext'
 import s from './PokemonReview.module.css'
 
+
+//Div with pokemonImg / PokemonStats / Review
 export function PokemonReview() {
     const { id } = useParams()
     const { pokemons } = usePokemons()

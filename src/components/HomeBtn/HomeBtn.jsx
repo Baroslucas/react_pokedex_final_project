@@ -4,6 +4,7 @@ import pokeball from '/assets/img/pokeball.png'
 import pokedex from '/assets/img/pokedex.png'
 import s from "./HomeBtn.module.css"
 
+//HomeBtn to return on the HomePage onClick
 export function HomeBtn() {
     const navigate = useNavigate()
 

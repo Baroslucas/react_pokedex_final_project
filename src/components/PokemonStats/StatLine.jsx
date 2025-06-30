@@ -1,6 +1,7 @@
 import { MAX_STAT } from "../../config/constants"
 import s from "./PokemonStats.module.css"
 
+//Render of one single line to build pokemonStats
 export function StatLine({statName, value}) {
     const max = MAX_STAT[statName]
 
