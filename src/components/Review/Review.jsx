@@ -1,5 +1,6 @@
 import s from './Review.module.css'
 
+//Div with an incrementale "like" btn and a review part of the pokemon selected
 export function Review({ review }) {
     return (
         <div className={s.div}>

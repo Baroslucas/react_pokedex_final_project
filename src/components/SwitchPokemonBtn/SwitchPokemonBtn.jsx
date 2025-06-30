@@ -3,6 +3,7 @@ import leftArrow from '/assets/img/left_arrow.svg'
 import rightArrow from '/assets/img/right_arrow.svg'
 import s from './SwitchPokemonBtn.module.css'
 
+// two btns left and right to switch on pokemons into PokemonReview
 export function SwitchPokemonBtn() {
     const navigate = useNavigate()
     const { id } = useParams()

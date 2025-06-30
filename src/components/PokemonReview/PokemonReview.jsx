@@ -7,7 +7,7 @@ import { usePokemons } from '../../context/PokemonContext'
 import s from './PokemonReview.module.css'
 
 
-//Div with pokemonImg / PokemonStats / Review
+//Div with pokemonImg / PokemonStats / Review (using context)
 export function PokemonReview() {
     const { id } = useParams()
     const { pokemons } = usePokemons()
