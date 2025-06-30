@@ -1,0 +1,47 @@
+.mainDiv {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    max-height: 80vh;
+    margin-right: 20px;
+}
+
+.likeBtnDiv {
+    display: flex;
+    align-items: center;
+    
+}
+
+.likeBtn {
+    border: none;
+    background-color: transparent;
+    height: 30px;
+    cursor: pointer;
+}
+
+.likeNbr {
+    margin: 0;
+}
+
+.likeImg {
+    color: red;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.input {
+    width: 95%;
+    border-radius: 36px;
+    padding: 8px;
+    margin-bottom: 30px;
+}
+
+.reviewDiv {
+    max-height: 400px;
+    overflow-y: auto;
+    
+    width: 100%;
+}

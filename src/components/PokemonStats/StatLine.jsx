@@ -1,13 +1,16 @@
 import { MAX_STAT } from "../../config/constants"
+import s from "./PokemonStats.module.css"
 
 export function StatLine({statName, value}) {
     const max = MAX_STAT[statName]
 
     return (
-        <div>
-            <p>{statName}</p>
-            <span>{value}</span>
-            <progress value={value} max={max} />
+        <div className={s.statBars}>
+            <p className={s.statName}>{statName}</p>
+            <div className={s.statLine}>
+                <span className={s.span}>{value}</span>
+                <progress className={s.progress} value={value} max={max} />
+            </div>
         </div>
     )
 }

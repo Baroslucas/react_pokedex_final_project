@@ -1,8 +1,10 @@
+import s from './Review.module.css'
+
 export function Review({ review }) {
     return (
-        <div>
-            <p>{review.content}</p>
-            <p>Posted by : {review.author}</p>
+        <div className={s.div}>
+            <p className={s.reviewContent}>{review.content}</p>
+            <p className={s.author}>Posted by : {review.author}</p>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import { usePokemons } from "../../context/PokemonContext"
 import { POKEMON_IMG_BASE_URL } from "../../config/constants";
+import s from "./PokemonImage.module.css"
 
 export function PokemonImage() {
     const { pokemons } = usePokemons()
@@ -17,8 +18,9 @@ export function PokemonImage() {
     }
 
     return (
-        <div>
+        <div className={s.div}>
             <img 
+                className={s.img}
                 src={`${POKEMON_IMG_BASE_URL}${pokemon.id}.svg`} 
                 alt={pokemon.name} 
             />

@@ -1,0 +1,47 @@
+.mainDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 80vh;
+}
+
+.typeDiv {
+    display: flex;
+    gap: 2px;
+}
+
+.statDiv {
+    margin-top: 10px;
+}
+
+.pokemonName {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.statBars {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.statName {
+    min-width: 110px;
+    margin: 5px;
+}
+
+.statLine {
+    display: flex;
+    width: 100%;
+}
+
+.span {
+    width: 3ch;
+}
+
+.progress {
+    min-height: 20px;
+    margin-left: 2px;
+}
+

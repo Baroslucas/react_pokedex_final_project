@@ -1,0 +1,15 @@
+.mainDiv {
+    overflow-y: hidden;
+}
+
+.descriptionDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-items: center;
+    min-height: calc(100vh - 300px);
+    background-image: url("/public/assets/img/pokeball_bg.svg");
+    background-repeat: no-repeat;
+    background-position: center; 
+}

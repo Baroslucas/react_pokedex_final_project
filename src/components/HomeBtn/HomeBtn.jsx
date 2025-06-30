@@ -1,7 +1,7 @@
 
 import { useNavigate } from 'react-router-dom'
-import pokeball from '../../assets/img/pokeball.png'
-import pokedex from '../../assets/img/pokedex.png'
+import pokeball from '/assets/img/pokeball.png'
+import pokedex from '/assets/img/pokedex.png'
 import s from "./HomeBtn.module.css"
 
 export function HomeBtn() {

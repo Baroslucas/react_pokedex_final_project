@@ -1,9 +1,10 @@
-import like from '../../assets/img/like.svg'
+import like from '/assets/img/like.svg'
 import { Review } from '../Review/Review'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from "react"
 import { addReview, fetchPokemonReview, updateLike } from '../../api/pokemonApi'
 import { usePokemons } from '../../context/PokemonContext'
+import s from './PokemonReview.module.css'
 
 export function PokemonReview() {
     const { id } = useParams()
@@ -57,16 +58,17 @@ export function PokemonReview() {
     }
 
     return (
-        <div>
-            <div>
-                <button onClick={handleLike}>
-                    <img src={like} alt="like button" />
+        <div className={s.mainDiv}>
+            <div className={s.likeBtnDiv}>
+                <button onClick={handleLike} className={s.likeBtn}>
+                    <img src={like} alt="like button" className={s.likeImg}/>
                 </button>
-                <p>{likes}</p>
+                <p className={s.likeNbr}>{likes}</p>
             </div>
             <div>
-                <h3>Review</h3>
+                <h3 className={s.title}>Reviews</h3>
                 <input 
+                    className={s.input}
                     type="text"
                     placeholder='Add a review ...'
                     value={newReview}
@@ -77,9 +79,12 @@ export function PokemonReview() {
                         }
                     }}
                 />
-                {reviews.map((review) => (
-                    <Review key={review.id} review={review} />
-                ))}
+                <div className={s.reviewDiv}>
+                    {reviews.map((review) => (
+                        <Review key={review.id} review={review} />
+                
+                    ))}
+                </div>
             </div>
         </div>
     )

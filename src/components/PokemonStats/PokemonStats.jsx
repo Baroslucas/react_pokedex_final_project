@@ -1,8 +1,9 @@
-import { MAX_STAT, normalizeStats } from "../../config/constants";
+import { MAX_STAT, normalizeStats, statsOrder } from "../../config/constants";
 import { TypeSpan } from "../TypeSpan/TypeSpan";
 import { StatLine } from "./StatLine";
 import { usePokemons } from "../../context/PokemonContext"
 import { useParams } from "react-router-dom";
+import s from "./PokemonStats.module.css"
 
 export function PokemonStats() {
     const { id } = useParams()
@@ -21,9 +22,9 @@ export function PokemonStats() {
     const normalizePokemonStats = normalizeStats(pokemon.base)
 
     return (
-        <div>
-            <h3>{pokemon.name}</h3>
-            <div>
+        <div className={s.mainDiv}>
+            <h3 className={s.pokemonName}>{pokemon.name}</h3>
+            <div className={s.typeDiv}>
                 {pokemon.types.map((type) => (
                     <TypeSpan 
                         key={type} 
@@ -31,8 +32,8 @@ export function PokemonStats() {
                     />
                 ))}   
             </div>
-            <div>
-                 {Object.keys(MAX_STAT).map((stat) => (
+            <div className={s.statDiv}>
+                 {statsOrder.map((stat) => (
                     <StatLine
                         key={stat}
                         statName={stat}

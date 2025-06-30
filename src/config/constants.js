@@ -45,3 +45,12 @@ export function normalizeStats(stats) {
 
 export const POKEMON_IMG_BASE_URL =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/";
+
+export const statsOrder = [
+  "hp",
+  "attack",
+  "defense",
+  "specialAttack",
+  "specialDefense",
+  "speed",
+];

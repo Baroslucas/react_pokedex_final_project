@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom'
-import leftArrow from '../../assets/img/left_arrow.svg'
-import rightArrow from '../../assets/img/right_arrow.svg'
+import leftArrow from '/assets/img/left_arrow.svg'
+import rightArrow from '/assets/img/right_arrow.svg'
 import s from './SwitchPokemonBtn.module.css'
 
 export function SwitchPokemonBtn() {
