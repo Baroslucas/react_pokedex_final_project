@@ -10,6 +10,8 @@
 Ce projet est le **front-end d'un site web Pokedex** basé sur les Pokémon de la première génération.  
 Réalisé avec **React** et **Vite**, le projet a pour objectif de reproduire le plus fidèlement possible l'exemple fourni par le professeur.
 
+Ce dernier voulais que l'on manipule les branch git, il y a donc une branch dev ou le travail a été éffectué et une branch master où le projet finalisé a été push.
+
 Le back-end est fourni par le professeur et expose des **endpoints pour récupérer les données des Pokémon**.
 
 ---
