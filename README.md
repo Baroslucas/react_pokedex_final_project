@@ -37,4 +37,4 @@ L'application récupère les données depuis le back-end :
 ## ⚡ Installation
 1. Cloner le dépôt :  
 ```bash
-git clone <>
+git clone <https://github.com/Baroslucas/react_pokedex_final_project.git>
